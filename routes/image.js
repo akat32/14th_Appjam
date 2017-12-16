@@ -1,6 +1,6 @@
 module.exports = (router, Users, fs, path)=>{
   router.get('/image', function(req, res, next) {
-    fs.readFile('./image/iOPunZW5rgor.PNG', (error,data)=>{
+    fs.readFile('./views/image/iOPunZW5rgor.PNG', (error,data)=>{
         console.log(data);
         res.end(data);
     });
