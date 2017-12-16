@@ -1,7 +1,8 @@
 module.exports = (router, Users, fs, path)=>{
   router.get('/image/:image', function(req, res, next) {
-    res.sendFile(req.params.image + ".PNG");
+    fs.readFile('./public/image/' + req.params.image + '.PNG', (error,data)=>{
+        res.end(data);
+    });
   })
   return router;
 }
-///root/meouk/14th_Appja/public/image/
