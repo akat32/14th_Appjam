@@ -17,14 +17,11 @@ module.exports = (router, Users, rndstring)=>{
     var result = await Users.findOne({token : token});
     if(!result)
       res.status(404).json({message : "User Not Found!"});
-    else if(!result.isLogined)
-    {
+    else{
       var Uresult = await Users.update({token:result.token}, {$set: {isLogined: true}});
       if(Uresult.ok) result.isLogined = true;
       res.status(200).json(result);
     }
-    else
-      res.status(401).json({message : "Login Fail!"});
   })
   .get('/signout/:token', async (req,res)=>{
     var token = req.params.token;

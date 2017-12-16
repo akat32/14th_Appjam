@@ -32,6 +32,4 @@
 
     HTTP 200 : User's json
 
-    HTTP 401 : {message : "Login Fail!"}
-
     HTTP 404 : {message : "User Not Found!"}
