@@ -35,3 +35,17 @@
     HTTP 200 : User's json
 
     HTTP 404 : {message : "User Not Found!"}
+
+
+* POST /upload : User's profile image
+
+> params
+
+    file : User's image
+
+> Response
+
+    HTTP 200 : File's name;
+
+    HTTP 500 : {message : "upload fail!"}
+    
