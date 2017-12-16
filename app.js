@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
 app.use('/auth',auth);
 app.use('/school', school);
 app.use('/upload', upload);
+app.use('/image',image);
 app.listen(3000, ()=>{
   console.log('Server Porting on 3000');
 })
