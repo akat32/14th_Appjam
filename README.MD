@@ -48,3 +48,29 @@
     HTTP 200 : File's name;
 
     HTTP 500 : {message : "upload fail!"}
+
+
+* POST /add/find : User's school list
+
+> params
+
+    school_name : User's school name
+
+> Response
+
+    HTTP 200 : User's list [json]
+
+    HTTP 404 : {message : "404 Not Found"}
+
+
+* POST /add/student : School student (리스트에 클릭 시)
+
+> Params
+
+    token : Student's token
+
+> Response
+
+    HTTP 200 : student's json
+
+    HTTP 404 : {message : "404 Not Found"}
