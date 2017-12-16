@@ -3,7 +3,7 @@ module.exports = (router, Users, rndstring)=>{
     var new_user = new Users(req.body);
     new_user.token = rndstring.generate(20);
     var result = new_user.save();
-    res.status(200).json({message : "Singup success!"});
+    res.status(200).json(result.token);
   })
   .post('/signin', async (req,res)=>{
     var result = await Users.findOne(req.body);

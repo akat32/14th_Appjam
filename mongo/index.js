@@ -10,6 +10,7 @@ var UsersSchema = mongoose.Schema({
   school_grade : {type : String},
   school_class : {type : String},
   school_number : {type : String},
+  student_number : {type : String},
   email : {type : String},
   token : {type : String},
   isLogined : {type: Boolean, default: false}
