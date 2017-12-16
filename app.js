@@ -6,7 +6,7 @@ var fs = require('fs');
 require('./mongo');
 var app = express();
 var upload = require('./routes/upload');
-var image = require('./routes/image')(express.Router(), Users);
+var image = require('./routes/image')(express.Router(), Users, fs);
 var auth = require('./routes/auth')(express.Router(), Users, rndstring, School);
 var school = require('./routes/school')(express.Router(),School, rndstring);
 app.use(bodyParser.json());
