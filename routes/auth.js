@@ -4,10 +4,10 @@ module.exports = (router, Users, rndstring, School)=>{
     new_user.token = rndstring.generate(20);
     var Sresult = await School.findOne({token : req.body.code});
     new_user.school_name = Sresult.name;
-    new_user.school_grade = (new_user.student_number/10000);
-    new_user.school_class = (new_user.student_number/100)%100;
-    new_user.school_number = (new_user.student_number%100);
-    var result = new_user.save();
+    new_user.school_grade = parseInt(new_user.student_number/10000);
+    new_user.school_class = parseInt((new_user.student_number/100)%100);
+    new_user.school_number = parseInt(new_user.student_number%100);
+    var result = await new_user.save();
     res.status(200).json(result.token);
   })
   .post('/signin', async (req,res)=>{
