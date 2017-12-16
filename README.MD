@@ -11,7 +11,9 @@
 
     phone_number : User's Phone_number [String]
 
-    student_number : Users student_number(학번) [String]
+    student_number : Users student_number(학번) [Number]
+
+    code : School's token [String]
 
     email : User's Email [String]
 

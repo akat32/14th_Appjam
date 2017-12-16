@@ -5,7 +5,7 @@ var path = require('path');
 var fs = require('fs');
 require('./mongo');
 var app = express();
-var auth = require('./routes/auth')(express.Router(), Users, rndstring);
+var auth = require('./routes/auth')(express.Router(), Users, rndstring, School);
 var school = require('./routes/school')(express.Router(),School, rndstring);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({limit: '1gb', extended: false }));
